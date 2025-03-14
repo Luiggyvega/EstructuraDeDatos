@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class MetodosOrdenamiento {
     private Scanner sc;
-    private ArrayList<NumerosAlmacenados> numeros; // Guardar la lista correctamente
+    private ArrayList<NumerosAlmacenados> numeros;
 
     public MetodosOrdenamiento(ArrayList<NumerosAlmacenados> numeros) {
-        this.numeros = numeros;  // Asignar la lista recibida al atributo de la clase
+        this.numeros = numeros;
         sc = new Scanner(System.in);
     }
 
