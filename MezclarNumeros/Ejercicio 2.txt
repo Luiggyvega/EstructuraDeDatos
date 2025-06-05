@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+class Nodo {
+    int com;
+    Nodo con;
+}
+
+public class Lista_O {
+    Nodo pp;
+
+    public Lista_O() {
+        pp = null;
+    }
+
+    public void Calcular(int lista) {
+        Nodo nn;
+        nn = new Nodo();
+        nn.com = lista;
+        nn.con = pp;
+        pp = nn;
+    }
+
+    public void Detener() {
+        Nodo oeste = pp;
+        while (oeste != null) {
+            System.out.println("x: " + oeste.com);
+            oeste = oeste.con;
+        }
+    }
+
+    public static void main(String[] ar) {
+        Scanner teclado = new Scanner(System.in);
+        Lista_O Obj = new Lista_O();
+        int xy;
+        int r;
+
+        do {
+            System.out.print("Estimado usuario...ingrese algo: ");
+            xy = teclado.nextInt();
+            teclado.nextLine();
+            Obj.Calcular(xy);
+
+            System.out.println("Desea ingresar más?");
+            System.out.print("NO, presione '0' -- SI, presione cualquier tecla: ");
+            r = teclado.nextInt();
+        } while (r != 0);
+
+        Obj.Detener();
+    }
+}
